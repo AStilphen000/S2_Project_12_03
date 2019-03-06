@@ -5,8 +5,8 @@
    Tutorial 10
    Case Problem 3
 
-   Author:  
-   Date:   
+   Author:  Angelina Stilphen
+   Date:   3.5.19
    
    Filename: ah_report.js
    
@@ -28,12 +28,25 @@
       
 */
 
+var donationTotal = 0;
 
+donors.forEach(calcSum);
 
+var summaryTable = "<table> <tr><th>Donors</th><td>" + donors.length + "</td></tr> <tr><th>Total Donations</th><td>$" + donationTotal.toLocaleString() + "</td></tr></table>";
 
+document.getElementById('donationSummary').innerHTML = summaryTable;
 
+var majorDonors = doors.filter(findMajorDonors);
 
+majorDonors.sort(donorSortDescending);
 
+var donorTable = "<table> <caption>Major Donors</caption> <tr><th>Donation</th><th>Donor ID</th> <th>Date</th><th>Name</th><th>Address</th> <th>Phone</th><th>E-mail</th></tr>";
+
+majorDonors.forEach(writeDonorRow);
+
+donorTable = "<table/>";
+
+document.getElementById("donorTable").innerHTML = donorTable; 
 
 
 
